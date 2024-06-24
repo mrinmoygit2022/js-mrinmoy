@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Dom Learning</title>
+    <style>
+        :root{
+            --themeBody: #C3BECD;
+            --themeBlack: #212121;
+            --themeSuccess: #029688;
+            --themeRed: #fc5185;
+            --fontWhite: #fff;
+            --themePurple: #d5e0fe;
+            --font-dark-color: #2e1e69;
+            --font-light-color: #8b74ee;
+            --themeButton: #673de6;
+            --basicPadding: 1rem 2rem 1rem 2rem;
+            --theme-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+        }
+        h1{
+            padding: 0px 20px;
+        }
+        .bg-container{
+            padding: 0rem 4rem 0rem 4rem;
+        }
+        .themePruple{
+            background-color: var(--themePurple);
+            color: var(--font-light-color);
+            padding: var(--basicPadding);
+            height: calc(100vh - 6vh);
+        }
+        .bg-black{
+            background-color: var(--themeBlack);
+            color: var(--fontWhite);
+        }
+        .themeBody{
+            background-color: var(--themeBody);
+        }
+        .font-16{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            text-align: justify;
+        }
+        .font-theme-dark{
+            color: var(--font-dark-color);
+        }
+        .theme-box-shadow{
+            box-shadow: var(--theme-box-shadow);
+            padding: 2px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body class="themeBody bg-container">
+    <section class="themePruple font-theme-dark">
+        <header class="theme-box-shadow">
+            <h1 id="title" class="heading">Learn about the Document Object Model (DOM)</h1>
+        </header>
+        <p class="font-16">Basic DOM manipulation techniques, including accessing, modifying, and creating elements, as well as adding event listeners.</p>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <input type="password" name="" id="">
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+
+        <div class="parent">
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Thursday</div>
+            <div class="day">Friday</div>
+        </div>
+    </section>
+</body>
+<script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1].innerHTML);
+
+        // for (let i = 0; i < parent.children.length; i++) {
+        //     const element = parent.children[i].innerHTML;
+        //     console.log(element);
+        // }
+        parent.children[1].style.color = "#fc5185";
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+        const dayOne = document.querySelector('.day')
+        // console.log(dayOne);
+        // console.log(dayOne.parentElement);
+        // console.log(dayOne.nextElementSibling);
+        console.log("NODES: ", parent.childNodes);
+</script>
+</html>

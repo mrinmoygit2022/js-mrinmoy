@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .padding-left{ padding-left: 25px; }
+        .button-style{
+            background-color: var(--theme-light-color);
+            color: var(--theme-white);
+            padding: 10px;
+            cursor: pointer;
+            width: fit-content;
+        }
+        /*.form{
+            display: table-caption;
+        }*/
+        input{
+            height: 35px;
+            border: none;
+            border-radius: 3px;
+        }
+        input[type=text] {
+            width: 100%;
+            /* border: 3px solid #ccc; */
+            padding: 10px 10px;
+            margin: 20px 0;
+            border: none;
+            box-sizing: border-box;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+        input[type=text]:focus {
+            /* border: 0px solid #fff; */
+            border: none;
+        }
+        #guess{
+            display: grid;
+        }
+        #wrapper{
+            width: fit-content;
+        }
+    </style>
+</head>
+<body class="bg-theme">
+  <nav>
+    <a href="/" aria-current="page">Home</a>
+    <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+      >Youtube channel</a
+    >
+  </nav>
+    
+    <div id="wrapper" class="padding-left">
+      <h1>Number Guessing Game</h1>
+    <p>Try and guess a random number between 1 and 100.</p>
+    <p>You have 10 attempts to guess the right number.</p>
+    </br>
+        <form class="form">
+            <label2 for="guessField" id="guess"><h1>Guess a number</h1></label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" id="subt" value="Submit Guess" class="guessSubmit button-style">
+        </form>
+
+        <div class="resultParas">
+            <p >Previous Guesses: <span class="guesses"></span></p>
+            <p >Guesses Remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+    <script src="chaiaurcode.js"></script>
+</body>
+</html>

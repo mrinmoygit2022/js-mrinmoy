@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom other topics</title>
+    <style>
+        :root{
+            --themeBody: #C3BECD;
+            --themeBlack: #212121;
+            --themeSuccess: #029688;
+            --themeRed: #fc5185;
+            --fontWhite: #fff;
+            --themePurple: #d5e0fe;
+            --font-dark-color: #2e1e69;
+            --font-light-color: #8b74ee;
+            --themeButton: #673de6;
+            --basicPadding: 1rem 2rem 1rem 2rem;
+            --theme-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+        }
+        h1{
+            padding: 0px 20px;
+        }
+        .bg-container{
+            padding: 0rem 4rem 0rem 4rem;
+        }
+        .themePruple{
+            background-color: var(--themePurple);
+            color: var(--font-light-color);
+            padding: var(--basicPadding);
+            height: calc(100vh - 6vh);
+        }
+        .bg-black{
+            background-color: var(--themeBlack);
+            color: var(--fontWhite);
+        }
+        .themeBody{
+            background-color: var(--themeBody);
+        }
+        .font-16{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            text-align: justify;
+        }
+        .font-theme-dark{
+            color: var(--font-dark-color);
+        }
+        .theme-box-shadow{
+            box-shadow: var(--theme-box-shadow);
+            padding: 2px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body class="themeBody bg-container">
+    <section class="themePruple font-theme-dark">
+
+    </section>
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "#ece6fa"
+    div.style.color = "#2e1e69"
+    div.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.08)"
+    div.style.padding = "12px"
+    div.style.fontSize = "20px"
+    div.style.fontWeight = 700
+    // div.innerHTML = "Basic DOM manipulation techniques, including accessing, modifying, and creating elements, as well as adding event listeners."
+    const addText = document.createTextNode("Javascript Dom")
+    div.appendChild(addText)
+
+    // print on html page
+    // document.body.appendChild(div)
+    document.body.querySelector('section').appendChild(div)
+</script>
+</html>
