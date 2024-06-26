@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Format</title>
+</head>
+<body>
+<body>
+    <div id="printDateTimestamp"></div>
+    <div id="printDate"></div>
+    <div id="clock"></div>
+</body>
+<script>
+    // Function to format date and time
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+// Get the current timestamp
+const now = Date.now();
+
+
+// Format the timestamp
+const formattedDate = formatDate(now);
+
+const currentTime = function(){
+    let date = new Date()
+    document.querySelector('#clock').innerHTML = date.toLocaleTimeString();
+}
+
+// Print the formatted date and time
+console.log(`Date.now() => ${now}`);
+console.log(`Formatted Date and Time: ${formattedDate}`);
+document.querySelector('#printDateTimestamp').innerHTML = `<h1>Date.now() => ${now}</h1>`
+document.querySelector('#printDate').innerHTML = `<h1>Formatted Date and Time: ${formattedDate}</h1>`
+
+
+setInterval(currentTime, 1000);
+</script>
+</html>

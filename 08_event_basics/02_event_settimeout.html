@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event learing Two</title>
+    <style>
+      :root {
+        --primary-button-light: #77b7d2;
+        --primary-button-dark: #52859b;
+        --font-white: #fff;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Courier New", Courier, monospace;
+        background-color: #dcdcdc;
+      }
+      #stop {
+        width: 100px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--primary-button-light);
+        color: var(--font-white);
+      }
+      #stop:hover {
+        background-color: var(--primary-button-dark);
+        transition: ease-in-out 0.3s;
+        cursor: pointer;
+      }
+      h1 {
+        margin: 0px;
+        padding: 10px 0px;
+      }
+      .container {
+        margin-left: 70px;
+        margin-right: 70px;
+        padding: 0px 20px;
+        background-color: var(--font-white);
+        width: 100%;
+        height: calc(100vh - 2.5vh);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Chai aur code</h1>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    /* JavaScript is a synchronous, single-threaded language by default. This means each operation waits for the previous one to complete before executing.
+
+    Execution Context means execute one line code at a time. Example: console.log("1"), console.log("2") etc.
+
+    Blocking code vs Non blocking code: 
+    Blocking code: Block the flow of the program. Read file as a synchronous procedure.
+    Non blocking code: Do not blocking the execution. Read the code as a asynchronous procedure.
+    */
+    const settimeout = function()
+    { 
+        console.log("Mrinmoy Roy"); 
+    }
+    document.querySelector('h1').innerHTML = "Best JS Series"
+    const changeMe = setTimeout(settimeout, 2000);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    })
+  </script>
+</html>
