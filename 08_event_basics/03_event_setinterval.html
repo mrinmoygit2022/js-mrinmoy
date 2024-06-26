@@ -52,13 +52,25 @@
     </div>
   </body>
   <script>
-    const sayDate = (str)=>{
-      console.log(str, Date.now());
+    const sayDate = function(str){
+        console.log(str, Date.now());
     }
-    const intervalId = setInterval(sayDate, 1000, "SetInterval");
-    clearInterval(intervalId);
-    //     clearInterval(changeMe)
-    //     console.log("STOPPED");
-    // });
+    
+    let intervalId;
+
+    document.querySelector('#start').addEventListener('click', function(){
+        if(!intervalId){
+          intervalId = setInterval(sayDate, 2000, "SetInterval");
+        }
+    });
+    // setInterval(function(){
+    //     clearInterval(intervalId);
+    //     intervalId = null;
+    // }, 8000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    });
   </script>
 </html>
