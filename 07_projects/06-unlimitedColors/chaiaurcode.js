@@ -1,4 +1,4 @@
-// generate a random color
+// generate a random colors
 
 const randomColor = function(){
     const hex = "0123456789ABCDEF";
