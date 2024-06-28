@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind in Javascript</title>
+  </head>
+  <body>
+    <button>Button Clicked</button>
+  </body>
+  <script>
+    // button style change 
+    document.body.style.backgroundColor = '#d5e0fe';
+    const button = document.querySelector("button");
+    button.id = "clickEvent";
+    Object.assign(clickEvent.style, {
+      width: "fit-content",
+      height: "auto",
+      padding: "10px 20px",
+      border: "none",
+      borderRadius: "50px",
+      cursor: "pointer",
+      backgroundColor: "#8b74ee",
+      color: "#fff",
+    });
+
+    button.addEventListener("mouseover", () => {
+      // Apply hover styles on mouseover
+      button.style.backgroundColor = "#673de6"; // Adjust hover background color (optional)
+      button.style.color = "#fff"; // Adjust hover text color (optional)
+    });
+
+    button.addEventListener("mouseout", () => {
+      // Reset styles on mouseout (optional)
+      button.style.backgroundColor = "#8b74ee"; // Reset background color to original
+      button.style.color = "#fff"; // Reset text color to original
+    });
+    // end of button style change
+
+    class React{
+        constructor(){
+            this.library = "React",
+            this.server = "https://localhost:3000/"
+
+            // requirement 
+            document.querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this);
+        }
+    }
+    const app = new React()
+
+  </script>
+</html>
